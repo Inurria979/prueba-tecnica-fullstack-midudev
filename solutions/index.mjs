@@ -21,6 +21,14 @@ ping("midu.dev", (err, info) => {
 });
 
 // Solucion
+/**
+ * Explicacion
+ * 
+ * Le pasamos una funcion por parametro a la funcion ping, esta es la encargada de manejar el estado de la
+ * "peticion", si es correcta simplemente imprime el tiempo y el host que le pasamos
+ * Si no es correcta imprime el error
+ */
+
 export const pingSolucion = (ip, callback) => {
   const startTime = process.hrtime();
 
