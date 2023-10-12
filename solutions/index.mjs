@@ -63,19 +63,18 @@ export function obtenerDatosPromise(callback) {
 // El resolve es lo que se ejecuta en el .then() o .catch()
 
 export function obtenerDatosPromiseSolutions() {
-  
-  return new Promise( resolve => {
-    setTimeout( () => {
-      resolve({data: 'datos importantes'})
-    }, 2000)
-  })
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ data: "datos importantes" });
+    }, 2000);
+  });
 }
 
 const obtDatosPromise = obtenerDatosPromise((err, info) => {
   console.log(info);
 });
 
-//Ejecuta el resolve el .then() 
+//Ejecuta el resolve el .then()
 obtenerDatosPromiseSolutions()
   .then((info) => {
     console.log(info);
@@ -85,12 +84,12 @@ obtenerDatosPromiseSolutions()
     process.exit(1);
   });
 
-try{
-//Devuelve la promesa
-const info = await obtenerDatosPromiseSolutions()
-//Ejecuta el resolve
-console.log(info)
-} catch(err) {
-  console.error(err)
-  process.exit(1)
+try {
+  //Devuelve la promesa
+  const info = await obtenerDatosPromiseSolutions();
+  //Ejecuta el resolve
+  console.log(info);
+} catch (err) {
+  console.error(err);
+  process.exit(1);
 }
